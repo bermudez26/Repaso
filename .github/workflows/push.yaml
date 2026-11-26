@@ -21,24 +21,6 @@ jobs:
       - name: Directorio de Salida
         run: mkdir -p out/classes
 
-      - name: Compilar Java
-        run: |
-          javac -d out/classes $(find src -name '*.java')
-
-      - name: Crear JAR
-        run: |
-          jar cfe out/Prueba.jar Main -C out/classes .
-
-      - name: Ejecutar JAR
-        run: |
-          java -jar out/Prueba.jar
-
-      - name: Subir Artefacto
-        uses: actions/upload-artifact@v4
-        with:
-          name: Prueba
-          path: out/Prueba.jar
-
 
           
           
