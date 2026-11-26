@@ -20,19 +20,19 @@ jobs:
           run: mkdir -p src
           
         - name: Comipilar Java
-          run: javac -d src $(find scr -name *.java)
+          run: javac -d out $(find scr -name *.java)
           
         - name: Crear JAR
-          run: jar cfe src/Prueba.jar Main -C out .
+          run: jar cfe out/Prueba.jar Main -C out .
           
         - name: Ejecutar JAR
-          run: java -jar src/Prueba.jar
+          run: java -jar out/Prueba.jar
           
         - name: Subir Artefacto
           uses: action/upload-artifact@v4
           whith: 
             name: Prueba
-            path: src/Prueba.jar
+            path: out/Prueba.jar
           
           
         
