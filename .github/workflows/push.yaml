@@ -12,12 +12,6 @@ jobs:
       - name: Inicializacion Repositorio
         uses: actions/checkout@v4
 
-      - name: Inicializacion Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '21'
-
 
           
           
