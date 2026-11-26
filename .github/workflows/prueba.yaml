@@ -1,5 +1,7 @@
 name: Prueba GitAction
-on: [ push ]
+on: 
+  push:
+    branches: [ main ]
 
 jobs:
   build:
