@@ -1,6 +1,5 @@
 name: Push Action GitHub
-on: Push
-  branches: [ main ]
+on: [ push ]
 
 jobs:
   build:
