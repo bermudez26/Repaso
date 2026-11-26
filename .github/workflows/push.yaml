@@ -18,9 +18,6 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Directorio de Salida
-        run: mkdir -p out/classes
-
 
           
           
