@@ -1,0 +1,41 @@
+name: Push Action GitHub
+on: Push
+  branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    job1:
+      step:
+        - name: Inicializacion Repositorio
+          uses: action/checkout@v4
+          
+        - name: Inicializacion Java
+          uses: action/setup-java@v4
+          with:
+            distribution: temurin
+            java-version: '21'
+          
+        - name: Directorio de Salida
+          run: mkdir -p src
+          
+        - name: Comipilar Java
+          run: javac -d src $(find scr -name *.java)
+          
+        - name: Crear JAR
+          run: jar cfe src/Prueba.jar Main -C out .
+          
+        - name: Ejecutar JAR
+          run: java -jar src/Prueba.jar
+          
+        - name: Subir Artefacto
+          uses: action/upload-artifact@v4
+          whith: 
+            name: Prueba
+            path: src/Prueba.jar
+          
+          
+        
+    
+			
