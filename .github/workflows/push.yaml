@@ -1,16 +1,30 @@
-name: Push Action GitHub
+name: Push Git Action
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Inicializacion Repositorio
-        uses: actions/checkout@v4
+      - name: Inicializar el Repositorio
+        uses: action/checkout@v4
+
+      - name: Inicializar Java
+        uses: action/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Crear Directorio de Salida
+        run: mkdir -p out
+
+      - name: Compilar Java
+        run: javac -d out $(find src -name *.java)
+
 
 
           
