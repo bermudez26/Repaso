@@ -21,7 +21,7 @@ jobs:
       run: mkdir -p out
 
     - name: Compilar java
-      run: javac -d out $(find src -name *.java)
+      run: javac -d out $(find src -name "*.java")
 
     - name: Crear jar
       run: jar cfe out/Main.java Main -C out .
