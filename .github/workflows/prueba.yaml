@@ -30,7 +30,7 @@ jobs:
       run: java jar out/Main.java
 
     - name: Crear Artefacto
-      uses: actions/upload-artifact@4
+      uses: actions/upload-artifact@v4
       with:
         name: App Java
         path: out/Main.java
