@@ -11,7 +11,19 @@ jobs:
     - name: Inicializar Repositorio
       uses: actions/checkout@v4
 
-    - name: Test
-      run: echo "Test Comando Run"
+    - name: Inicializar Java
+      uses: actions/setup-java@v4
+
+    - name: Crear Carpeta
+      run: mkdir -p out
+
+    - name: Compilar java
+      run: javac -d out $(find src *.java)
+
+    - name: Crear jar
+      run: jar cfe out/Main.java
+
+    - name: Ejecutar jar
+      run: java jar out/Main.java
       
       
