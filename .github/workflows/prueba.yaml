@@ -13,6 +13,9 @@ jobs:
 
     - name: Inicializar Java
       uses: actions/setup-java@v5
+      with:
+        distribution: temurin
+        java-version: '21'
 
     - name: Crear Carpeta
       run: mkdir -p out
