@@ -18,15 +18,21 @@ jobs:
         java-version: '21'
 
     - name: Crear Carpeta
-      run: mkdir -p src
+      run: mkdir -p out
 
     - name: Compilar java
       run: javac -d out $(find src -name "*.java")
 
     - name: Crear jar
-      run: jar cfe src/Main.java Main -C out .
+      run: jar cfe out/Main.java Main -C out .
 
     - name: Ejecutar jar
-      run: java jar src/Main.java
+      run: java jar out/Main.java
+
+    - name: Crear Artefacto
+      uses: actions/upload-artifact@4
+      with:
+        name: App Java
+        path: out/Main.java
       
       
