@@ -1,4 +1,4 @@
-name: Prueba GitAction
+name: bomba
 on:
   push:
     branches: [ main ]
