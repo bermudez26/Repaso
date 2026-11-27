@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Inicializar el Repositorio
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Prueba Comando
         run: echo "Prueba"
